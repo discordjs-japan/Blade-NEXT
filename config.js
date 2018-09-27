@@ -176,7 +176,10 @@ exports.config = {
   /**
      * Klasa Schedule Options
      */
-  schedule: { interval: 60000 }
+  schedule: { interval: 60000 },
+
+  /* Owner */
+  ownerID: "351992405831974915"
 }
 
 // The token for this bot to login with
