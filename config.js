@@ -57,10 +57,6 @@ exports.config = {
      * Database Options
      */
   providers: {
-    mongodb: {
-      user: "BladeNEXT",
-      password: "password"
-    },
     default: "json"
   },
 
