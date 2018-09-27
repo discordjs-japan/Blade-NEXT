@@ -12,9 +12,9 @@ exports.config = {
   // Disables/Enables a process.on('unhandledRejection'...) handler
   production: false,
   // The default language that comes with klasa. More base languages can be found on Klasa-Pieces
-  language: "en-US",
+  language: "ja-JP",
   // The default configurable prefix for each guild
-  prefix: "!",
+  prefix: "*/",
   // If custom settings should be preserved when a guild removes your bot
   preserveSettings: true,
   // If your bot should be able to mention @everyone
