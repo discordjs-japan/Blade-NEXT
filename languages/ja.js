@@ -171,7 +171,21 @@ module.exports = class extends Language {
       ],
       COMMAND_STATS_DESCRIPTION: "ボットの統計情報を表示します。",
       MESSAGE_PROMPT_TIMEOUT: "プロンプトがタイムアウトしました。",
-      COMMAND_AVATAR_DESCRIPTION: "あなたのアバターURLを取得します。"
+
+      COMMAND_AVATAR_DESCRIPTION: "あなたのアバターURLを取得します。",
+      COMMAND_DISCORDSTATS_DESCRIPTION: "Discordのサーバー状態を確認",
+      COMMAND_DISCORDSTATS_NORMAL: "正常",
+      COMMAND_DISCORDSTATS_ABNORMAL: "不安定",
+      COMMAND_DISCORDSTATS_RESOLVED: "解決済み",
+      COMMAND_DISCORDSTATS_REUNRESOLVED: "未解決",
+      COMMAND_SERVER_TITLE: "サーバーステータス",
+      COMMAND_SERVER_ID: "サーバーID",
+      COMMAND_SERVER_MEMBER: "人数",
+      COMMAND_SERVER_OWNER: "オーナー",
+      COMMAND_SERVER_REGION: "リージョン",
+      COMMAND_SERVER_CHANNEL: "チャンネル数",
+      COMMAND_SERVER_CREATE: "サーバー作成日",
+      UNKNOWN_COMMAND: (prefix) => `不明なコマンドです。${prefix}helpでコマンドに誤字、脱字、コマンドが存在するか確認をお願いいたします。`
     }
   }
 
