@@ -2,14 +2,11 @@ const { SQLProvider, QueryBuilder, Type, Timestamp } = require("klasa")
 const { resolve } = require("path")
 const db = require("sqlite")
 const fs = require("fs-nextra")
-
 const TIMEPARSERS = {
   DATE: new Timestamp("YYYY-MM-DD"),
   DATETIME: new Timestamp("YYYY-MM-DD hh:mm:ss")
 }
-
 module.exports = class extends SQLProvider {
-
   constructor(...args) {
     super(...args)
     this.baseDir = resolve(this.client.userBaseDirectory, "bwd", "provider", "sqlite")
@@ -42,9 +39,9 @@ module.exports = class extends SQLProvider {
 
     const schemaValues = [...gateway.schema.values(true)]
     return this.run(`
-			CREATE TABLE ${sanitizeKeyName(table)} (
-				id VARCHAR(${gateway.idLength || 18}) PRIMARY KEY NOT NULL UNIQUE${schemaValues.length ? `, ${schemaValues.map(this.qb.parse.bind(this.qb)).join(", ")}` : ""}
-			);`
+		CREATE TABLE ${sanitizeKeyName(table)} (
+			id VARCHAR(${gateway.idLength || 18}) PRIMARY KEY NOT NULL UNIQUE${schemaValues.length ? `, ${schemaValues.map(this.qb.parse.bind(this.qb)).join(", ")}` : ""}
+		);`
     )
   }
 
@@ -89,9 +86,9 @@ module.exports = class extends SQLProvider {
   update(table, id, data) {
     const [keys, values] = this.parseUpdateInput(data, false)
     return this.run(`
-			UPDATE ${sanitizeKeyName(table)}
-			SET ${keys.map((key, i) => `${sanitizeKeyName(key)} = ${sanitizeValue(values[i])}`)}
-			WHERE id = ${sanitizeValue(id)};`)
+		UPDATE ${sanitizeKeyName(table)}
+		SET ${keys.map((key, i) => `${sanitizeKeyName(key)} = ${sanitizeValue(values[i])}`)}
+		WHERE id = ${sanitizeValue(id)};`)
   }
 
   replace(...args) {
