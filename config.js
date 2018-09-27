@@ -57,17 +57,10 @@ exports.config = {
      * Database Options
      */
   providers: {
-    /*
-        // Provider Connection object for process based databases:
-        // rethinkdb, mongodb, mssql, mysql, postgresql
-        mysql: {
-            host: 'localhost',
-            db: 'klasa',
-            user: 'database-user',
-            password: 'database-password',
-            options: {}
-        },
-        */
+    mongodb: {
+      user: "BladeNEXT",
+      password: "password"
+    },
     default: "json"
   },
 
@@ -176,10 +169,7 @@ exports.config = {
   /**
      * Klasa Schedule Options
      */
-  schedule: { interval: 60000 },
-
-  /* Owner */
-  ownerID: "351992405831974915"
+  schedule: { interval: 60000 }
 }
 
 // The token for this bot to login with

@@ -98,7 +98,7 @@ module.exports = class extends Language {
       COMMAND_LOAD_DESCRIPTION: "ボットからピースを読み込みます。",
       COMMAND_PING: "計測中...",
       COMMAND_PING_DESCRIPTION: "Discordへの応答速度を計測します。",
-      COMMAND_PINGPONG: (diff, ping) => `Pong!! (往復所要時間: ${diff}ms. Heartbeat: ${ping}ms.)`,
+      COMMAND_PINGPONG: (diff, ping) => `Pong! (往復所要時間: ${diff}ms. Heartbeat: ${ping}ms.)`,
       COMMAND_INVITE: () => [
         `サーバーに${this.client.user.username}を追加するには :`,
         this.client.invite,
