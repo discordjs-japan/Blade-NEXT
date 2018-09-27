@@ -1,21 +1,16 @@
-const { sqlite } = require("./database/sqlite")
-const DataManager = require("./database/DataManager")
-const discordjs = require("discord.js")
+const { Client } = require("klasa")
+const { config, token } = require("./config")
 
-const client = new discordjs.Client()
+class BladeNEXTClient extends Client {
 
-require("dotenv").config()
+  constructor(...args) {
+    super(...args)
 
-client.on("ready", () => {
-  sqlite.sync({force: true, logging: console.log})
-}).on("message", (message) => {
-  if (message.author.bot) return
-  DataManager.upsert(message.author.id)
-}).on("userUpdate", (olduser, newuser) => {
-  if (newuser.bot) return
-  DataManager.upsert(newuser.id)
-}).on("reconnecting", () => {
-  console.log("[API] 再接続")
-})
+    // Add any properties to your Klasa Client
+  }
 
-client.login(process.env.TOKEN)
+  // Add any methods to your Klasa Client
+
+}
+
+new BladeNEXTClient(config).login(token)

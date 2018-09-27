@@ -5,11 +5,10 @@
   "main": "index.js",
   "dependencies": {
     "bufferutil": "^4.0.0",
-    "discord.js": "^11.4.2",
+    "discord.js": "github:discordjs/discord.js",
     "dotenv": "^6.0.0",
     "erlpack": "github:hammerandchisel/erlpack",
-    "sequelize": "^4.39.0",
-    "sqlite3": "^4.0.2",
+    "klasa": "github:dirigeants/klasa",
     "uws": "^99.0.0"
   },
   "devDependencies": {},
