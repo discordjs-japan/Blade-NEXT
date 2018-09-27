@@ -9,7 +9,7 @@
     "dotenv": "^6.0.0",
     "erlpack": "github:hammerandchisel/erlpack",
     "klasa": "github:dirigeants/klasa",
-    "sqlite3": "^4.0.2",
+    "sqlite": "^3.0.0",
     "uws": "^99.0.0"
   },
   "devDependencies": {},
