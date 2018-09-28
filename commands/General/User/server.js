@@ -14,7 +14,7 @@ module.exports = class extends Command {
     const Server = new MessageEmbed()
       .setColor("#0x00FF00")
       .setTitle(message.language.get("COMMAND_SERVER_TITLE"))
-      .setThumbnail(message.guild.iconURL() ? message.guild.iconURL() : "https://github.com/DJS-JPN/res/blob/master/No_Image.png?raw=true")
+      .setThumbnail(message.guild.iconURL() || "https://github.com/DJS-JPN/res/blob/master/No_Image.png?raw=true")
       .addField(message.language.get("COMMAND_SERVER_ID"), message.guild.id, true)
       .addField(message.language.get("COMMAND_SERVER_OWNER"), message.guild.owner.id, true)
       .addField(message.language.get("COMMAND_SERVER_MEMBER"), message.guild.members.size, true)
