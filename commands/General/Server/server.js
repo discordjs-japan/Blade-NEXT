@@ -6,7 +6,7 @@ module.exports = class extends Command {
   constructor(...args) {
     super(...args, {
       runIn: ["text", "group"],
-      description: language => language.get("COMMAND_DISCORDSTATS_DESCRIPTION"),
+      description: language => language.get("COMMAND_SERVER_DESCRIPTION"),
     })
   }
 

@@ -11,6 +11,7 @@ module.exports = class extends Language {
       COMMAND_DISCORDSTATS_ABNORMAL: "Abnormal",
       COMMAND_DISCORDSTATS_RESOLVED: "Resolved",
       COMMAND_DISCORDSTATS_REUNRESOLVED: "Unresolved",
+      COMMAND_SERVER_DESCRIPTION: "Check Guild server status",
       COMMAND_SERVER_TITLE: "Server status",
       COMMAND_SERVER_ID: "Server ID",
       COMMAND_SERVER_MEMBER: "Members",
