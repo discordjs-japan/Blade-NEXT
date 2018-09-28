@@ -57,7 +57,7 @@ exports.config = {
      * Database Options
      */
   providers: {
-    default: "json"
+    default: "sqlite"
   },
 
   /**
