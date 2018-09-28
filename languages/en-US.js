@@ -11,6 +11,14 @@ module.exports = class extends Language {
       COMMAND_DISCORDSTATS_ABNORMAL: "Abnormal",
       COMMAND_DISCORDSTATS_RESOLVED: "Resolved",
       COMMAND_DISCORDSTATS_REUNRESOLVED: "Unresolved",
+      COMMAND_SERVER_TITLE: "Server status",
+      COMMAND_SERVER_ID: "Server ID",
+      COMMAND_SERVER_MEMBER: "Members",
+      COMMAND_SERVER_OWNER: "Owner",
+      COMMAND_SERVER_REGION: "Region",
+      COMMAND_SERVER_CHANNEL: "Channels",
+      COMMAND_SERVER_CREATE: "Created On",
+      UNKNOWN_COMMAND: (prefix) => `Unknown command check with ${prefix}help`
     }
   }
 
