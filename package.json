@@ -10,21 +10,18 @@
     "erlpack": "github:hammerandchisel/erlpack",
     "klasa": "github:dirigeants/klasa",
     "sqlite": "^3.0.0",
-    "uws": "^99.0.0"
+    "uws": "github:discordjs/uws"
   },
   "devDependencies": {},
   "scripts": {
     "test": "node index.js",
     "start": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DJS-JPN/Blade-NEXT.git"
-  },
-  "author": "",
-  "license": "GPL-3.0",
+  "repository": "git+https://github.com/DJS-JPN/Blade-NEXT.git",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/DJS-JPN/Blade-NEXT/issues"
   },
-  "homepage": "https://github.com/DJS-JPN/Blade-NEXT#readme"
+  "homepage": "https://github.com/DJS-JPN/Blade-NEXT#readme",
+  "author": "DJS-JPN"
 }
