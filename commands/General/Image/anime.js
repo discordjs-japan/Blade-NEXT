@@ -8,6 +8,7 @@ module.exports = class extends Command {
     super(...args, {
       enabled: true,
       runIn: ["text", "dm", "group"],
+      nsfw: true,
       description: language => language.get("COMMAND_ANIME_DESCRIPTION")
     })
   }
