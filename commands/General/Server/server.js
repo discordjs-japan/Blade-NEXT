@@ -25,7 +25,7 @@ module.exports = class extends Command {
       .setThumbnail(message.guild.iconURL() || "https://github.com/DJS-JPN/res/blob/master/No_Image.png?raw=true")
       .addField(message.language.get("COMMAND_SERVER_NAME"), message.guild.name, true)
       .addField(message.language.get("COMMAND_SERVER_ID"), message.guild.id, true)
-      .addField(message.language.get("COMMAND_SERVER_OWNER"), message.guild.owner.id, true)
+      .addField(message.language.get("COMMAND_SERVER_OWNER"), message.guild.owner.user.tag, true)
       .addField(message.language.get("COMMAND_SERVER_MEMBER"), message.guild.memberCount, true)
       .addField(message.language.get("COMMAND_SERVER_REGION"), message.guild.region, true)
       .addField(message.language.get("COMMAND_SERVER_CHANNEL"), message.guild.channels.size, true)
