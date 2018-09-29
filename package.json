@@ -9,8 +9,8 @@
     "dotenv": "^6.0.0",
     "erlpack": "github:hammerandchisel/erlpack",
     "klasa": "github:dirigeants/klasa",
-    "sqlite": "^3.0.0",
-    "uws": "github:discordjs/uws"
+    "klasa-dashboard-hooks": "github:dirigeants/klasa-dashboard-hooks",
+    "sqlite": "^3.0.0"
   },
   "devDependencies": {},
   "scripts": {

@@ -423,6 +423,12 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
+"klasa-dashboard-hooks@github:dirigeants/klasa-dashboard-hooks":
+  version "0.0.1-dev"
+  resolved "https://codeload.github.com/dirigeants/klasa-dashboard-hooks/tar.gz/3c7f376116bbac69022123ea7d4d21935a1f2a9f"
+  dependencies:
+    node-fetch "^2.1.2"
+
 "klasa@github:dirigeants/klasa":
   version "0.5.0-dev"
   resolved "https://codeload.github.com/dirigeants/klasa/tar.gz/96cc12de8480df163e82744599dacfc719bb4c12"
@@ -855,10 +861,6 @@ uuid@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   integrity sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==
-
-uws@discordjs/uws:
-  version "0.0.0"
-  resolved "https://codeload.github.com/discordjs/uws/tar.gz/6d010c830553123cddbb4fcd2b6a9592fcb41478"
 
 verror@1.10.0:
   version "1.10.0"
