@@ -179,6 +179,7 @@ module.exports = class extends Language {
       COMMAND_DISCORDSTATS_RESOLVED: "解決済み",
       COMMAND_DISCORDSTATS_REUNRESOLVED: "未解決",
       COMMAND_SERVER_DESCRIPTION: "サーバーの統計情報を表示します。",
+      COMMAND_SERVER_NAME: "名前",
       COMMAND_SERVER_TITLE: "サーバーステータス",
       COMMAND_SERVER_ID: "サーバーID",
       COMMAND_SERVER_MEMBER: "人数",
@@ -186,6 +187,12 @@ module.exports = class extends Language {
       COMMAND_SERVER_REGION: "リージョン",
       COMMAND_SERVER_CHANNEL: "チャンネル数",
       COMMAND_SERVER_CREATE: "サーバー作成日",
+      COMMAND_SERVER_VERIFICATIONLEVEL: "認証レベル",
+      COMMAND_SERVER_VERIFICATIONLEVEL_NONE: "無し",
+      COMMAND_SERVER_VERIFICATIONLEVEL_LOW: "低",
+      COMMAND_SERVER_VERIFICATIONLEVEL_MEDIUM: "中",
+      COMMAND_SERVER_VERIFICATIONLEVEL_HARD: "(╯°□°）╯︵ ┻━┻",
+      COMMAND_SERVER_VERIFICATIONLEVEL_VERYHARD: "┻━┻ ﾐヽ(ಠ益ಠ)ノ彡┻━┻",
       UNKNOWN_COMMAND: (prefix) => `不明なコマンドです。${prefix}helpでコマンドに誤字、脱字、コマンドが存在するか確認をお願いいたします。`
     }
   }

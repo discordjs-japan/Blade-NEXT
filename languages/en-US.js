@@ -12,6 +12,7 @@ module.exports = class extends Language {
       COMMAND_DISCORDSTATS_RESOLVED: "Resolved",
       COMMAND_DISCORDSTATS_REUNRESOLVED: "Unresolved",
       COMMAND_SERVER_DESCRIPTION: "Check Guild server status",
+      COMMAND_SERVER_NAME: "Name",
       COMMAND_SERVER_TITLE: "Server status",
       COMMAND_SERVER_ID: "Server ID",
       COMMAND_SERVER_MEMBER: "Members",
@@ -19,6 +20,12 @@ module.exports = class extends Language {
       COMMAND_SERVER_REGION: "Region",
       COMMAND_SERVER_CHANNEL: "Channels",
       COMMAND_SERVER_CREATE: "Created On",
+      COMMAND_SERVER_VERIFICATIONLEVEL: "Verification Level",
+      COMMAND_SERVER_VERIFICATIONLEVEL_NONE: "None",
+      COMMAND_SERVER_VERIFICATIONLEVEL_LOW: "Low",
+      COMMAND_SERVER_VERIFICATIONLEVEL_MEDIUM: "Medium",
+      COMMAND_SERVER_VERIFICATIONLEVEL_HARD: "(╯°□°）╯︵ ┻━┻ ()",
+      COMMAND_SERVER_VERIFICATIONLEVEL_VERYHARD: "┻━┻ ﾐヽ(ಠ益ಠ)ノ彡┻━┻",
       UNKNOWN_COMMAND: (prefix) => `Unknown command check with ${prefix}help`
     }
   }
