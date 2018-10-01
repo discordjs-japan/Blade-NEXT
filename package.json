@@ -23,5 +23,8 @@
     "url": "https://github.com/DJS-JPN/Blade-NEXT/issues"
   },
   "homepage": "https://github.com/DJS-JPN/Blade-NEXT#readme",
-  "author": "DJS-JPN"
+  "author": "DJS-JPN",
+  "engines": {
+    "node": "10.11.0"
+  }
 }
