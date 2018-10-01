@@ -9,7 +9,8 @@ module.exports = class extends Command {
       enabled: true,
       runIn: ["text", "dm", "group"],
       nsfw: true,
-      description: language => language.get("COMMAND_ANIME_DESCRIPTION")
+      description: language => language.get("COMMAND_ANIME_DESCRIPTION"),
+      requiredPermissions: ["EMBED_LINKS", "SEND_MESSAGES"]
     })
   }
 

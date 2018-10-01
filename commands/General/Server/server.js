@@ -7,6 +7,7 @@ module.exports = class extends Command {
     super(...args, {
       runIn: ["text", "group"],
       description: language => language.get("COMMAND_SERVER_DESCRIPTION"),
+      requiredPermissions: ["EMBED_LINKS", "VIEW_CHANNEL", "SEND_MESSAGES"]
     })
     this.timestamp = new Timestamp("d MMMM YYYY")
   }
