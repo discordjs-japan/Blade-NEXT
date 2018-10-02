@@ -7,7 +7,7 @@ module.exports = class extends Command {
       enabled: true,
       runIn: ["text"],
       description: "api",
-      usage: "<wiki|guilds|guild|users|members|channels|channel|roles> [key:channel]",
+      usage: "<wiki|guilds|guild|users|members|channels|channel|roles> [channel:channel]",
       usageDelim: " ",
       requiredPermissions: ["SEND_MESSAGES"],
       subcommands: true
