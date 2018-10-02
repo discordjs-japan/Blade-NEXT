@@ -7,7 +7,7 @@ module.exports = class extends Command {
       enabled: true,
       runIn: ["text"],
       description: "api",
-      usage: "<wiki|guilds|guild|users|members|channels|channel|roles> [key:string]",
+      usage: "<wiki|guilds|guild|users|members|channels|channel|roles> [key:channel]",
       usageDelim: " ",
       requiredPermissions: ["SEND_MESSAGES"],
       subcommands: true
@@ -42,9 +42,8 @@ module.exports = class extends Command {
     return message.sendMessage(`http://blade-next.now.sh/api/guilds/${message.guild.id}/channels\n\nWiki: https://github.com/DJS-JPN/Blade-NEXT/wiki/channels`)
   }
 
-  async channel(message, key) {
-    // 後はチャンネルかを調べる処理を書くだけ
-    return message.sendMessage(`http://blade-next.now.sh/api/guilds/${message.guild.id}/channels/${this.client.channels.get(key).id || message.channel.id}\n\nWiki: https://github.com/DJS-JPN/Blade-NEXT/wiki/channels`)
+  async channel(message, channel) {
+    return message.sendMessage(`http://blade-next.now.sh/api/guilds/${message.guild.id}/channels/${channel.id || message.channel.id}\n\nWiki: https://github.com/DJS-JPN/Blade-NEXT/wiki/channels`)
   }
 
   async roles(message) {
