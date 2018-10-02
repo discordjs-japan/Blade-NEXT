@@ -26,7 +26,8 @@ module.exports = class extends Language {
       COMMAND_SERVER_VERIFICATIONLEVEL_MEDIUM: "Medium",
       COMMAND_SERVER_VERIFICATIONLEVEL_HARD: "(╯°□°）╯︵ ┻━┻ ()",
       COMMAND_SERVER_VERIFICATIONLEVEL_VERYHARD: "┻━┻ ﾐヽ(ಠ益ಠ)ノ彡┻━┻",
-      COMMAND_ANIME_DESCRIPTION: "Search Anime image",
+      COMMAND_IMAGE_DESCRIPTION: "Search image",
+      COMMAND_R18IMAGE_DESCRIPTION: "Display an image including NSFW",
       UNKNOWN_COMMAND: (prefix) => `Unknown command check with ${prefix}help`,
       COMMAND_VOTE_DESCRIPTION: "Vote for this bot"
     }

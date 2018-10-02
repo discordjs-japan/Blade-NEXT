@@ -193,7 +193,8 @@ module.exports = class extends Language {
       COMMAND_SERVER_VERIFICATIONLEVEL_MEDIUM: "中",
       COMMAND_SERVER_VERIFICATIONLEVEL_HARD: "(╯°□°）╯︵ ┻━┻",
       COMMAND_SERVER_VERIFICATIONLEVEL_VERYHARD: "┻━┻ ﾐヽ(ಠ益ಠ)ノ彡┻━┻",
-      COMMAND_ANIME_DESCRIPTION: "二次元画像を検索して表示します。",
+      COMMAND_IMAGE_DESCRIPTION: "NSFWを含まない画像を表示します。",
+      COMMAND_R18IMAGE_DESCRIPTION: "NSFWを含む画像を表示します。(NSFWチャンネルのみで実行可能)",
       UNKNOWN_COMMAND: (prefix) => `不明なコマンドです。${prefix}helpでコマンドに誤字、脱字、コマンドが存在するか確認をお願いいたします。`,
       COMMAND_VOTE_DESCRIPTION: "このボットに投票する"
     }
