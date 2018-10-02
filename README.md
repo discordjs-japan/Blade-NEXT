@@ -1,6 +1,7 @@
 <div align="center">
 
 [![banner](https://www.osustuff.org/img/imageslice/2018-10-02/72125/436707.jpg)](https://djs-jpn.ga)
+
 [![GitHub license](https://img.shields.io/github/license/DJS-JPN/Blade-NEXT.svg?style=for-the-badge)](https://github.com/DJS-JPN/Blade-NEXT/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/DJS-JPN/Blade-NEXT.svg?style=for-the-badge)](https://github.com/DJS-JPN/Blade-NEXT/issues)
 [![GitHub forks](https://img.shields.io/github/forks/DJS-JPN/Blade-NEXT.svg?style=for-the-badge)](https://github.com/DJS-JPN/Blade-NEXT/network)
