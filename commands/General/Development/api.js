@@ -42,8 +42,8 @@ module.exports = class extends Command {
     return message.sendMessage(`http://blade-next.now.sh/api/guilds/${message.guild.id}/channels\n\nWiki: https://github.com/DJS-JPN/Blade-NEXT/wiki/channels`)
   }
 
-  async channel(message, channel) {
-    return message.sendMessage(`http://blade-next.now.sh/api/guilds/${message.guild.id}/channels/${channel.id || message.channel.id}\n\nWiki: https://github.com/DJS-JPN/Blade-NEXT/wiki/channels`)
+  async channel(message, [channel = message.channel]) {
+    return message.sendMessage(`http://blade-next.now.sh/api/guilds/${channel.guild.id}/channels/${channel.id}\n\nWiki: https://github.com/DJS-JPN/Blade-NEXT/wiki/channels`)
   }
 
   async roles(message) {
