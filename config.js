@@ -57,6 +57,13 @@ exports.config = {
      * Database Options
      */
   providers: {
+    mysql: {
+      host: process.env.HOST,
+      db: process.env.DB,
+      user: process.env.USER,
+      password: process.env.PASSWORD,
+      options: {}
+    },
     default: "sqlite"
   },
 
