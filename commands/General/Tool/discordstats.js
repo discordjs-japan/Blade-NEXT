@@ -38,10 +38,10 @@ module.exports = class extends Command {
           text: "DEVELOPED BY DJS-JPN",
         },
         fields: [{
-          name: "サーバーの状態",
+          name: "❯ サーバーの状態",
           value: allstats,
         }, ...status, {
-          name: "最後に行われたメンテナンス",
+          name: "❯ 最後に行われたメンテナンス",
           value: `${maintenance.at}（${maintenance.resolved}）`,
         }],
       },
