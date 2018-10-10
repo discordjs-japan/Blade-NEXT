@@ -5,9 +5,9 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      runIn: ["text", "dm", "group"],
+      runIn: ["text"],
       description: language => language.get("COMMAND_AVATAR_DESCRIPTION"),
-      usage: "[user:user]",
+      usage: "[user:username]",
       requiredPermissions: ["EMBED_LINKS"]
     })
   }
