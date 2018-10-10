@@ -5,19 +5,30 @@
   "main": "index.js",
   "dependencies": {
     "bufferutil": "^4.0.0",
+    "canvas": "^1.6.12",
+    "canvas-constructor": "github:kyranet/canvasConstructor",
     "discord.js": "github:discordjs/discord.js",
-    "dotenv": "^6.0.0",
+    "dotenv": "^6.1.0",
     "erlpack": "github:hammerandchisel/erlpack",
+    "fetch": "^1.1.0",
+    "fs-nextra": "^0.3.7",
     "klasa": "github:dirigeants/klasa",
     "klasa-dashboard-hooks": "github:dirigeants/klasa-dashboard-hooks",
-    "mongodb": "^3.1.6",
     "prism-media": "0.0.3",
+    "snekfetch": "^4.0.4",
     "sqlite": "^3.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1"
+  },
   "scripts": {
     "test": "node index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "lint": "eslint *.js --fix"
   },
   "repository": "git+https://github.com/DJS-JPN/Blade-NEXT.git",
   "license": "MIT",
