@@ -5,17 +5,14 @@
   "main": "index.js",
   "dependencies": {
     "bufferutil": "^4.0.0",
-    "canvas": "^1.6.12",
     "canvas-constructor": "github:kyranet/canvasConstructor",
     "discord.js": "github:discordjs/discord.js",
     "dotenv": "^6.1.0",
     "erlpack": "github:hammerandchisel/erlpack",
     "fetch": "^1.1.0",
-    "fs-nextra": "^0.3.7",
     "klasa": "github:dirigeants/klasa",
     "klasa-dashboard-hooks": "github:dirigeants/klasa-dashboard-hooks",
     "prism-media": "0.0.3",
-    "snekfetch": "^4.0.4",
     "sqlite": "^3.0.0"
   },
   "devDependencies": {
@@ -38,6 +35,6 @@
   "homepage": "https://github.com/DJS-JPN/Blade-NEXT#readme",
   "author": "DJS-JPN",
   "engines": {
-    "node": "10.11.0"
+    "node": "10.12.0"
   }
 }
