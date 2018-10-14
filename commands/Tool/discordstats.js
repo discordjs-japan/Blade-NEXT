@@ -22,8 +22,8 @@ module.exports = class extends Command {
       inline: true,
     }))
     const allstats = (summary.status.description === "All Systems Operational")
-      ? "全サーバーは正常です。"
-      : "サーバーが不安定な可能性があります。"
+      ? message.language.get("COMMAND_DISCORDSTATS_GREED")
+      : message.language.get("COMMAND_DISCORDSTATS_RED")
     const maintenance = {
       at: incidents.incidents[0].created_at,
       resolved: (incidents.incidents[0].status === "resolved")
@@ -38,10 +38,10 @@ module.exports = class extends Command {
           text: "DEVELOPED BY DJS-JPN",
         },
         fields: [{
-          name: "❯ サーバーの状態",
+          name: "❯ Discord Server Status",
           value: allstats,
         }, ...status, {
-          name: "❯ 最後に行われたメンテナンス",
+          name: message.language.get("COMMAND_DISCORDSTATS_LAST_MAINTENANCE"),
           value: `${maintenance.at}（${maintenance.resolved}）`,
         }],
       },
