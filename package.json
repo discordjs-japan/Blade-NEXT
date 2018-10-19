@@ -10,6 +10,7 @@
     "dotenv": "^6.1.0",
     "erlpack": "github:hammerandchisel/erlpack",
     "fetch": "^1.1.0",
+    "fs-nextra": "^0.3.7",
     "klasa": "github:dirigeants/klasa",
     "klasa-dashboard-hooks": "github:dirigeants/klasa-dashboard-hooks",
     "prism-media": "0.0.3",
