@@ -1,11 +1,15 @@
-const { SQLProvider, QueryBuilder, Type, Timestamp } = require("klasa")
+const { SQLProvider, QueryBuilder, Type, Timestamp, util: { chunk } } = require("klasa")
 const { resolve } = require("path")
 const db = require("sqlite")
 const fs = require("fs-nextra")
+
+const valueList = amount => new Array(amount).fill("?").join(", ")
+
 const TIMEPARSERS = {
   DATE: new Timestamp("YYYY-MM-DD"),
   DATETIME: new Timestamp("YYYY-MM-DD hh:mm:ss")
 }
+
 module.exports = class extends SQLProvider {
   constructor(...args) {
     super(...args)
@@ -28,7 +32,7 @@ module.exports = class extends SQLProvider {
   }
 
   hasTable(table) {
-    return this.runGet(`SELECT name FROM sqlite_master WHERE type='table' AND name='${table}';`)
+    return this.runGet(`SELECT name FROM sqlite_master WHERE type='table' AND name=${sanitizeKeyName(table)};`)
       .then(Boolean)
   }
 
@@ -39,9 +43,9 @@ module.exports = class extends SQLProvider {
 
     const schemaValues = [...gateway.schema.values(true)]
     return this.run(`
-		CREATE TABLE ${sanitizeKeyName(table)} (
-			id VARCHAR(${gateway.idLength || 18}) PRIMARY KEY NOT NULL UNIQUE${schemaValues.length ? `, ${schemaValues.map(this.qb.parse.bind(this.qb)).join(", ")}` : ""}
-		);`
+			CREATE TABLE ${sanitizeKeyName(table)} (
+				id VARCHAR(${gateway.idLength || 18}) PRIMARY KEY NOT NULL UNIQUE${schemaValues.length ? `, ${schemaValues.map(this.qb.parse.bind(this.qb)).join(", ")}` : ""}
+			);`
     )
   }
 
@@ -49,23 +53,23 @@ module.exports = class extends SQLProvider {
     return this.run(`DROP TABLE ${sanitizeKeyName(table)};`)
   }
 
-  getAll(table, entries = []) {
-    return this.runAll(entries.length ?
-      `SELECT * FROM ${sanitizeKeyName(table)} WHERE id IN ('${entries.join("', '")}');` :
-      `SELECT * FROM ${sanitizeKeyName(table)};`)
-      .then(output => output.map(entry => this.parseEntry(table, entry)))
+  async getAll(table, entries = []) {
+    let output = []
+    if (entries.length) for (const myChunk of chunk(entries, 999)) output.push(...await this.runAll(`SELECT * FROM ${sanitizeKeyName(table)} WHERE id IN ( ${valueList(myChunk.length)} );`, myChunk))
+    else output = await this.runAll(`SELECT * FROM ${sanitizeKeyName(table)};`)
+    return output.map(entry => this.parseEntry(table, entry))
   }
 
   get(table, key, value = null) {
     return this.runGet(value === null ?
-      `SELECT * FROM ${sanitizeKeyName(table)} WHERE id = ${sanitizeKeyName(key)};` :
-      `SELECT * FROM ${sanitizeKeyName(table)} WHERE ${sanitizeKeyName(key)} = ${sanitizeValue(value)};`)
+      `SELECT * FROM ${sanitizeKeyName(table)} WHERE id = ?;` :
+      `SELECT * FROM ${sanitizeKeyName(table)} WHERE ${sanitizeKeyName(key)} = ?;`, [value ? transformValue(value) : key])
       .then(entry => this.parseEntry(table, entry))
       .catch(() => null)
   }
 
   has(table, key) {
-    return this.runGet(`SELECT id FROM ${sanitizeKeyName(table)} WHERE id = ${sanitizeValue(key)};`)
+    return this.runGet(`SELECT id FROM ${sanitizeKeyName(table)} WHERE id = ?;`, [key])
       .then(() => true)
       .catch(() => false)
   }
@@ -80,15 +84,15 @@ module.exports = class extends SQLProvider {
     const [keys, values] = this.parseUpdateInput(data, false)
     keys.push("id")
     values.push(id)
-    return this.run(`INSERT INTO ${sanitizeKeyName(table)} ( ${keys.map(sanitizeKeyName).join(", ")} ) VALUES ( ${values.map(sanitizeValue).join(", ")} );`)
+    return this.run(`INSERT INTO ${sanitizeKeyName(table)} ( ${keys.map(sanitizeKeyName).join(", ")} ) VALUES ( ${valueList(values.length)} );`, values.map(transformValue))
   }
 
   update(table, id, data) {
     const [keys, values] = this.parseUpdateInput(data, false)
     return this.run(`
-		UPDATE ${sanitizeKeyName(table)}
-		SET ${keys.map((key, i) => `${sanitizeKeyName(key)} = ${sanitizeValue(values[i])}`)}
-		WHERE id = ${sanitizeValue(id)};`)
+			UPDATE ${sanitizeKeyName(table)}
+			SET ${keys.map(key => `${sanitizeKeyName(key)} = ?`)}
+			WHERE id = ?;`, [...values.map(transformValue), id])
   }
 
   replace(...args) {
@@ -96,7 +100,7 @@ module.exports = class extends SQLProvider {
   }
 
   delete(table, row) {
-    return this.run(`DELETE FROM ${sanitizeKeyName(table)} WHERE id = ${sanitizeValue(row)};`)
+    return this.run(`DELETE FROM ${sanitizeKeyName(table)} WHERE id = ?;`, [row])
   }
 
   addColumn(table, piece) {
@@ -106,14 +110,21 @@ module.exports = class extends SQLProvider {
   async removeColumn(table, schemaPiece) {
     const gateway = this.client.gateways[table]
     if (!gateway) throw new Error(`There is no gateway defined with the name ${table}.`)
-    const sanitizedTable = sanitizeKeyName(table)		
+
+    const sanitizedTable = sanitizeKeyName(table)
+
+			
     const sanitizedCloneTable = sanitizeKeyName(`${table}_temp`)
+
     const allPieces = [...gateway.schema.values(true)]
     const index = allPieces.findIndex(piece => schemaPiece.path === piece.path)
     if (index === -1) throw new Error(`There is no key ${schemaPiece.key} defined in the current schema for ${table}.`)
+
     const filteredPieces = allPieces.slice()
     filteredPieces.splice(index, 1)
+
     const filteredPiecesNames = filteredPieces.map(piece => sanitizeKeyName(piece.path)).join(", ")
+
     await this.createTable(sanitizedCloneTable, filteredPieces.map(this.qb.parse.bind(this.qb)))
     await this.exec([
       `INSERT INTO ${sanitizedCloneTable} (${filteredPiecesNames})`,
@@ -152,20 +163,20 @@ module.exports = class extends SQLProvider {
       .then(result => result.map(row => row.name))
   }
 
-  runGet(sql) {
-    return db.get(sql)
+  runGet(...sql) {
+    return db.get(...sql)
   }
 
-  runAll(sql) {
-    return db.all(sql)
+  runAll(...sql) {
+    return db.all(...sql)
   }
 
-  run(sql) {
-    return db.run(sql)
+  run(...sql) {
+    return db.run(...sql)
   }
 
-  exec(sql) {
-    return db.exec(sql)
+  exec(...sql) {
+    return db.exec(...sql)
   }
 
 }
@@ -182,12 +193,11 @@ function sanitizeKeyName(value) {
   return `"${value}"`
 }
 
-function sanitizeValue(value) {
+function transformValue(value) {
   switch (typeof value) {
   case "boolean":
   case "number": return value
-  case "string": return `'${value.replace(/'/, "''")}'`
   case "object": return value === null ? value : JSON.stringify(value)
-  default: return sanitizeValue(String(value))
+  default: return String(value)
   }
 }
