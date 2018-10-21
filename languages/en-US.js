@@ -84,7 +84,10 @@ module.exports = class extends Language {
       COMMAND_ROLEINFO_PERMISSIONS: "❯ Permissions",
       YES: "Yes",
       NO: "No",
-      NONE: "None"
+      NONE: "None",
+      COMMAND_PREFIX_UPDATE: "The prefix for this guild has been set to",
+      COMMAND_PREFIX_DESCRIPTION: "Change the command prefix the bot uses in your server.",
+      COMMAND_PREFIX_SAME: "The Prefix you attempted to set is already set."
     }
   }
 

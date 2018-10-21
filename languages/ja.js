@@ -252,6 +252,9 @@ module.exports = class extends Language {
       YES: "はい",
       NO: "いいえ",
       NONE: "無い",
+      COMMAND_PREFIX_UPDATE: "サーバーのPrefixを設定しました。",
+      COMMAND_PREFIX_DESCRIPTION: "ボットがサーバーで使用するコマンド接頭辞を変更します。",
+      COMMAND_PREFIX_SAME: "設定しようとしたPrefixは既に設定されています。"
     }
   }
 
