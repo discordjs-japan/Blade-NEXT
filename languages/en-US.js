@@ -90,7 +90,8 @@ module.exports = class extends Language {
       COMMAND_LANGUAGE_DESCRIPTION: "Language settings",
       COMMAND_PREFIX_SAME: "The Prefix you attempted to set is already set.",
       COMMAND_LANGUAGE_SAME: "It has already been set for that language.",
-      COMMAND_LANGUAGE_UPDATE: "Changed the language setting."
+      COMMAND_LANGUAGE_UPDATE: "Changed the language setting.",
+      COMMAND_WIKIPEDIA_DESCRIPTION: "Search and display Wikipedia articles from the title."
     }
   }
 
