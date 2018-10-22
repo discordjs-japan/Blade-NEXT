@@ -18,5 +18,6 @@ module.exports = class extends Task {
       `${this.client.commands.size} commands｜djs-jpn.ga`
     ]
     this.client.schedule.create("UpdatePlayingGameTask", "* */3 * * *")
+    await this.client.user.setActivity(this.playing[this.client.fun.random(0, 4)], {type: "PLAYING"})
   }
 }
