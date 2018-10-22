@@ -5,7 +5,7 @@ module.exports = class extends Task {
     const playing = [
       `@${this.client.user.tag} help｜djs-jpn.ga`,
       `${this.client.guilds.size} guilds｜djs-jpn.ga`,
-      `Default Prefix：${this.client.settings.prefix}｜djs-jpn.ga`,
+      `Default Prefix：${this.client.options.prefix}｜djs-jpn.ga`,
       `${this.client.users.size} users｜djs-jpn.ga`,
       `${this.client.commands.size} commands｜djs-jpn.ga`
     ]
