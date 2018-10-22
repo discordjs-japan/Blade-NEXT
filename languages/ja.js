@@ -254,7 +254,10 @@ module.exports = class extends Language {
       NONE: "無い",
       COMMAND_PREFIX_UPDATE: "サーバーのPrefixを設定しました。",
       COMMAND_PREFIX_DESCRIPTION: "ボットがサーバーで使用するコマンド接頭辞を変更します。",
-      COMMAND_PREFIX_SAME: "設定しようとしたPrefixは既に設定されています。"
+      COMMAND_PREFIX_SAME: "設定しようとしたPrefixは既に設定されています。",
+      COMMAND_LANGUAGE_DESCRIPTION: "言語設定",
+      COMMAND_LANGUAGE_SAME: "既にその言語に設定されています。",
+      COMMAND_LANGUAGE_UPDATE: "言語設定を変更しました。"
     }
   }
 
