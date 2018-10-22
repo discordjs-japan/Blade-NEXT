@@ -5,6 +5,7 @@ module.exports = class extends Command {
   constructor(...args) {
     super(...args, {
       runIn: ["text"],
+      requiredPermissions: ["SEND_MESSAGES", "SEND_MESSAGES"],
       description: language => language.get("COMMAND_ROLEINFO_DESCRIPTION"),
       usage: "<Role:rolename>"
     })

@@ -84,7 +84,14 @@ module.exports = class extends Language {
       COMMAND_ROLEINFO_PERMISSIONS: "❯ Permissions",
       YES: "Yes",
       NO: "No",
-      NONE: "None"
+      NONE: "None",
+      COMMAND_PREFIX_UPDATE: "The prefix for this guild has been set to",
+      COMMAND_PREFIX_DESCRIPTION: "Change the command prefix the bot uses in your server.",
+      COMMAND_LANGUAGE_DESCRIPTION: "Language settings",
+      COMMAND_PREFIX_SAME: "The Prefix you attempted to set is already set.",
+      COMMAND_LANGUAGE_SAME: "It has already been set for that language.",
+      COMMAND_LANGUAGE_UPDATE: "Changed the language setting.",
+      COMMAND_WIKIPEDIA_DESCRIPTION: "Search and display Wikipedia articles from the title."
     }
   }
 

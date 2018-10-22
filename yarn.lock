@@ -1017,6 +1017,14 @@ jsprim@^1.2.2:
   dependencies:
     node-fetch "^2.1.2"
 
+klasa-functions@KlasaCommunityPlugins/functions:
+  version "0.0.1"
+  resolved "https://codeload.github.com/KlasaCommunityPlugins/functions/tar.gz/32927e8001c5e0411e580b45b57423b873ffbf13"
+
+klasa-raw-events@KlasaCommunityPlugins/raw-events:
+  version "0.0.1"
+  resolved "https://codeload.github.com/KlasaCommunityPlugins/raw-events/tar.gz/038b82f79dceb95a9f28e96aa4cef1fcfcccc14a"
+
 "klasa@github:dirigeants/klasa":
   version "0.5.0-dev"
   resolved "https://codeload.github.com/dirigeants/klasa/tar.gz/4645bd38128f1ba12c0c7f81d72a53f6f037751e"

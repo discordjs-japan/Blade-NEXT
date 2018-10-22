@@ -1,6 +1,6 @@
 {
   "name": "blade-next",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Blade新しく作ります。",
   "main": "index.js",
   "dependencies": {
@@ -13,6 +13,8 @@
     "fs-nextra": "^0.3.7",
     "klasa": "github:dirigeants/klasa",
     "klasa-dashboard-hooks": "github:dirigeants/klasa-dashboard-hooks",
+    "klasa-functions": "KlasaCommunityPlugins/functions",
+    "klasa-raw-events": "KlasaCommunityPlugins/raw-events",
     "prism-media": "0.0.3",
     "sqlite": "^3.0.0"
   },

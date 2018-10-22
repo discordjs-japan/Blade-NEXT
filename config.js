@@ -77,7 +77,7 @@ exports.config = {
       aliases: [],
       autoAliases: true,
       bucket: 1,
-      cooldown: 0,
+      cooldown: 5,
       description: "",
       enabled: true,
       guarded: false,
@@ -102,12 +102,16 @@ exports.config = {
       klasa: false,
       appliesTo: []
     },
-    finalizers: { enabled: true },
+    finalizers: {
+      enabled: true
+    },
     inhibitors: {
       enabled: true,
       spamProtection: false
     },
-    languages: { enabled: true },
+    languages: {
+      enabled: true
+    },
     monitors: {
       enabled: true,
       ignoreBots: true,
@@ -121,7 +125,7 @@ exports.config = {
       sql: false,
       cache: false
     },
-    tasks: { enabled: true }
+    tasks: {enabled: true},
   },
 
   /**
@@ -144,13 +148,13 @@ exports.config = {
     timestamps: true,
     utc: false,
     colors: {
-      debug: { time: { background: "magenta" } },
-      error: { time: { background: "red" } },
-      log: { time: { background: "blue" } },
-      verbose: { time: { text: "gray" } },
-      warn: { time: { background: "lightyellow", text: "black" } },
-      wtf: { message: { text: "red" }, time: { background: "red" } }
-    }
+      debug: {time: {background: "magenta"}},
+      error: {time: {background: "red"}},
+      log: {time: {background: "blue"}},
+      verbose: {time: {text: "gray"}},
+      warn: {time: {background: "lightyellow", text: "black"}},
+      wtf: {message: {text: "red"}, time: {background: "red"}},
+    },
   },
 
   /**
@@ -165,7 +169,12 @@ exports.config = {
   /**
      * Klasa Schedule Options
      */
-  schedule: { interval: 60000 }
+  schedule: {interval: 60000},
+  aliasFunctions: { 
+    returnRun: true, 
+    prefix: "fun", 
+    enabled: true 
+  }
 }
 
 // The token for this bot to login with
