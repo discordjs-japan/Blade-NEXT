@@ -11,10 +11,3 @@ class BladeNEXTClient extends Client {
 }
 
 new BladeNEXTClient(config).login(token)
-
-/* BladeNEXT Plugin */
-module.exports = {
-  [Client.plugin]() {
-    this.klasaIsCool = true
-  }
-}
