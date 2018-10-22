@@ -5,6 +5,7 @@ module.exports = class extends Command {
     super(...args, {
       aliases: ["setPrefix"],
       cooldown: 5,
+      requiredPermissions: ["SEND_MESSAGES"],
       description: language => language.get("COMMAND_PREFIX_DESCRIPTION"),
       permissionLevel: 6,
       runIn: ["text"],
