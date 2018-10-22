@@ -1,0 +1,16 @@
+{
+    "editor.tabSize": 2,
+    "files.exclude": {
+        "**/node_modules": true
+    },
+    "css.validate": false,
+    "eslint.autoFixOnSave": true,
+    "eslint.run": "onType",
+    "eslint.validate": [
+        "javascript"
+    ],
+    "editor.formatOnSave": false,
+    "html.autoClosingTags": false,
+    "npm.enableScriptExplorer": true,
+    "scss.validate": false
+}
