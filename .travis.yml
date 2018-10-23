@@ -10,7 +10,5 @@ cache: {
       "node_modules"
   ]
 }
-env:
-  - TOKEN=$TOKEN
 install: yarn
 script: "yarn run lint"
