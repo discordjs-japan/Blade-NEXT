@@ -26,9 +26,9 @@
     "eslint-plugin-promise": "^4.0.1"
   },
   "scripts": {
-    "test": "node index.js",
+    "test": "eslint \"./**/*.js\"",
     "start": "node index.js",
-    "lint": "eslint \"./**/*.js\""
+    "lint": "eslint . --fix"
   },
   "repository": "git+https://github.com/DJS-JPN/Blade-NEXT.git",
   "license": "MIT",
