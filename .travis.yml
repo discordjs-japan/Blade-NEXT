@@ -1,7 +1,8 @@
 os: linux
 sudo: false
 language: node_js
-node_js: node_js
+node_js: 
+  - "10"
 dist: trusty
 cache: {
   yarn: true,
@@ -11,9 +12,5 @@ cache: {
 }
 env:
   - TOKEN=$TOKEN
-matrix:
-  fast_finish: true
-  allow_failures:
-    - env: TOKEN=$TOKEN
 install: yarn
 script: "npm run test"
