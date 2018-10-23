@@ -1,0 +1,19 @@
+os: linux
+sudo: false
+language: node_js
+node_js: node_js
+dist: trusty
+cache: {
+  yarn: true,
+  "directories": [
+      "node_modules"
+  ]
+}
+env:
+  - TOKEN=$TOKEN
+matrix:
+  fast_finish: true
+  allow_failures:
+    - env: TOKEN=$TOKEN
+install: yarn
+script: "npm run test"
