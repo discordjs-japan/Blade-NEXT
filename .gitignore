@@ -65,6 +65,3 @@ bwd/*
 
 # now config
 now.json
-
-# JetBrains IDE
-.idea
