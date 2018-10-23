@@ -1,4 +1,4 @@
-const { Task } = require("klasa")
+const { Task } = require('klasa')
 
 module.exports = class extends Task {
   constructor(...args) {
@@ -6,7 +6,7 @@ module.exports = class extends Task {
   }
 
   async run() {
-    await this.client.user.setActivity(this.playing[this.client.fun.random(0, 4)], {type: "PLAYING"})
+    await this.client.user.setActivity(this.playing[this.client.fun.random(0, 4)], {type: 'PLAYING'})
   }
 
   async init() {
@@ -17,7 +17,7 @@ module.exports = class extends Task {
       `${this.client.users.size} users｜djs-jpn.ga`,
       `${this.client.commands.size} commands｜djs-jpn.ga`
     ]
-    this.client.schedule.create("UpdatePlayingGameTask", "* */3 * * *")
-    await this.client.user.setActivity(this.playing[this.client.fun.random(0, 4)], {type: "PLAYING"})
+    this.client.schedule.create('UpdatePlayingGameTask', '* */3 * * *')
+    await this.client.user.setActivity(this.playing[this.client.fun.random(0, 4)], {type: 'PLAYING'})
   }
 }
