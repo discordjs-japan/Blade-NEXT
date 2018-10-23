@@ -1,8 +1,8 @@
-const { Route } = require("klasa-dashboard-hooks")
+const { Route } = require('klasa-dashboard-hooks')
 
 module.exports = class extends Route {
   constructor(...args) {
-    super(...args, { route: "users" })
+    super(...args, { route: 'users' })
   }
 
   get(request, response) {

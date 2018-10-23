@@ -1,4 +1,4 @@
-const { Command } = require("klasa")
+const { Command } = require('klasa')
 
 module.exports = class extends Command {
 
@@ -9,13 +9,13 @@ module.exports = class extends Command {
      */
     super(...args, {
       enabled: true,
-      runIn: ["text", "dm", "group"],
-      description: language => language.get("COMMAND_SUPPORT_DESCRIPTION"),
-      extendedHelp: "No extended help available."
+      runIn: ['text', 'dm', 'group'],
+      description: language => language.get('COMMAND_SUPPORT_DESCRIPTION'),
+      extendedHelp: 'No extended help available.'
     })
   }
 
   async run(message) {
-    return message.sendMessage("https://discord.gg/DbTpjXV")
+    return message.sendMessage('https://discord.gg/DbTpjXV')
   }
 }

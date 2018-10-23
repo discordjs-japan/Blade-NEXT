@@ -1,34 +1,66 @@
 {
     "env": {
-        "es6": true,
-        "node": true
+      "es6": true,
+      "node": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module"
+      "ecmaVersion": 2018,
+      "sourceType": "module"
     },
     "rules": {
-        "indent": [
-            "error",
-            2
-        ],
-        "linebreak-style": [
-            "error",
-            "windows"
-        ],
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "semi": [
-            "error",
-            "never"
-        ],
-        "no-console": "off",
-        "one-var": [
-            2,
-            "never"
-        ]
+      "indent": [
+        "error",
+        2
+      ],
+      "linebreak-style": [
+        "error",
+        "windows"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "never"
+      ],
+      "callback-return": "error",
+      "key-spacing": "error",
+      "keyword-spacing": [
+        "error",
+        {
+          "overrides": {
+            "if": {
+              "after": true
+            },
+            "for": {
+              "after": true
+            },
+            "while": {
+              "after": true
+            },
+            "catch": {
+              "after": true
+            },
+            "switch": {
+              "after": true
+            }
+          }
+        }
+      ],
+      "no-var": "error",
+      "no-console": [
+        "error",
+        {
+          "allow": [
+            "log",
+            "warn",
+            "error"
+          ]
+        }
+      ],
+      "no-empty": "error",
+      "unicode-bom": "error"
     }
-}
+  }

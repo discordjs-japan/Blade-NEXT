@@ -1,27 +1,27 @@
-const { Command } = require("klasa")
-const request = require("request")
+const { Command } = require('klasa')
+const request = require('request')
 
 module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
       enabled: true,
-      runIn: ["text", "dm", "group"],
-      requiredPermissions: ["EMBED_LINKS"],
-      description: "Searches the Discord.js docs for your query.",
-      extendedHelp: "No extended help available.",
-      usage: "<master|stable|commando|rpc> <query:str>",
-      usageDelim: " ",
+      runIn: ['text', 'dm', 'group'],
+      requiredPermissions: ['EMBED_LINKS'],
+      description: 'Searches the Discord.js docs for your query.',
+      extendedHelp: 'No extended help available.',
+      usage: '<master|stable|commando|rpc> <query:str>',
+      usageDelim: ' ',
       subcommands: true
     })
   }
 
   async master(message, [query]) {
-    await request("https://djsdocs.sorta.moe/main/master/embed", {
+    await request('https://djsdocs.sorta.moe/main/master/embed', {
       qs: {
         q: query
       },
-      method: "GET",
+      method: 'GET',
       json: true
     }, (error, request, body) => {
       if (!body) return message.sendMessage(`Information matching \`${query}\` could not be found.`)
@@ -30,11 +30,11 @@ module.exports = class extends Command {
   }
 
   async stable(message, [query]) {
-    await request("https://djsdocs.sorta.moe/main/stable/embed", {
+    await request('https://djsdocs.sorta.moe/main/stable/embed', {
       qs: {
         q: query
       },
-      method: "GET",
+      method: 'GET',
       json: true
     }, (error, request, body) => {
       if (!body) return message.sendMessage(`Information matching \`${query}\` could not be found.`)
@@ -43,11 +43,11 @@ module.exports = class extends Command {
   }
 
   async commando(message, [query]) {
-    await request("https://djsdocs.sorta.moe/commando/master/embed", {
+    await request('https://djsdocs.sorta.moe/commando/master/embed', {
       qs: {
         q: query
       },
-      method: "GET",
+      method: 'GET',
       json: true
     }, (error, request, body) => {
       if (!body) return message.sendMessage(`Information matching \`${query}\` could not be found.`)
@@ -56,11 +56,11 @@ module.exports = class extends Command {
   }
 
   async rpc(message, [query]) {
-    await request("https://djsdocs.sorta.moe/rpc/master/embed", {
+    await request('https://djsdocs.sorta.moe/rpc/master/embed', {
       qs: {
         q: query
       },
-      method: "GET",
+      method: 'GET',
       json: true
     }, (error, request, body) => {
       if (!body) return message.sendMessage(`Information matching \`${query}\` could not be found.`)

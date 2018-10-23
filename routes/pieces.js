@@ -1,14 +1,14 @@
-const { Route } = require("klasa-dashboard-hooks")
+const { Route } = require('klasa-dashboard-hooks')
 
 module.exports = class extends Route {
   constructor(...args) {
-    super(...args, { route: "pieces/:type" })
+    super(...args, { route: 'pieces/:type' })
   }
 
   get(request, response) {
     const { type } = request.params
     const store = this.client.pieceStores.get(type)
-    if (!store) response.end("[]")
+    if (!store) response.end('[]')
     return response.end(JSON.stringify(store.keyArray()))
   }
 }

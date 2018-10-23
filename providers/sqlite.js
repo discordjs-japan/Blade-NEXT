@@ -1,34 +1,34 @@
-const { SQLProvider, QueryBuilder, Type, Timestamp, util: { chunk } } = require("klasa")
-const { resolve } = require("path")
-const db = require("sqlite")
-const fs = require("fs-nextra")
+const { SQLProvider, QueryBuilder, Type, Timestamp, util: { chunk } } = require('klasa')
+const { resolve } = require('path')
+const db = require('sqlite')
+const fs = require('fs-nextra')
 
-const valueList = amount => new Array(amount).fill("?").join(", ")
+const valueList = amount => new Array(amount).fill('?').join(', ')
 
 const TIMEPARSERS = {
-  DATE: new Timestamp("YYYY-MM-DD"),
-  DATETIME: new Timestamp("YYYY-MM-DD hh:mm:ss")
+  DATE: new Timestamp('YYYY-MM-DD'),
+  DATETIME: new Timestamp('YYYY-MM-DD hh:mm:ss')
 }
 
 module.exports = class extends SQLProvider {
   constructor(...args) {
     super(...args)
-    this.baseDir = resolve(this.client.userBaseDirectory, "bwd", "provider", "sqlite")
+    this.baseDir = resolve(this.client.userBaseDirectory, 'bwd', 'provider', 'sqlite')
     this.qb = new QueryBuilder({
-      null: "NULL",
-      integer: ({ max }) => max >= 2 ** 32 ? "BIGINT" : "INTEGER",
-      float: "DOUBLE PRECISION",
-      boolean: { type: "TINYINT", resolver: (input) => input ? "1" : "0" },
-      date: { type: "DATETIME", resolver: (input) => TIMEPARSERS.DATETIME.display(input) },
-      time: { type: "DATETIME", resolver: (input) => TIMEPARSERS.DATETIME.display(input) },
-      timestamp: { type: "TIMESTAMP", resolver: (input) => TIMEPARSERS.DATE.display(input) }
+      null: 'NULL',
+      integer: ({ max }) => max >= 2 ** 32 ? 'BIGINT' : 'INTEGER',
+      float: 'DOUBLE PRECISION',
+      boolean: { type: 'TINYINT', resolver: (input) => input ? '1' : '0' },
+      date: { type: 'DATETIME', resolver: (input) => TIMEPARSERS.DATETIME.display(input) },
+      time: { type: 'DATETIME', resolver: (input) => TIMEPARSERS.DATETIME.display(input) },
+      timestamp: { type: 'TIMESTAMP', resolver: (input) => TIMEPARSERS.DATE.display(input) }
     })
   }
 
   async init() {
     await fs.ensureDir(this.baseDir)
-    await fs.ensureFile(resolve(this.baseDir, "db.sqlite"))
-    return db.open(resolve(this.baseDir, "db.sqlite"))
+    await fs.ensureFile(resolve(this.baseDir, 'db.sqlite'))
+    return db.open(resolve(this.baseDir, 'db.sqlite'))
   }
 
   hasTable(table) {
@@ -37,14 +37,14 @@ module.exports = class extends SQLProvider {
   }
 
   createTable(table, rows) {
-    if (rows) return this.run(`CREATE TABLE ${sanitizeKeyName(table)} (${rows.map(([k, v]) => `${sanitizeKeyName(k)} ${v}`).join(", ")});`)
+    if (rows) return this.run(`CREATE TABLE ${sanitizeKeyName(table)} (${rows.map(([k, v]) => `${sanitizeKeyName(k)} ${v}`).join(', ')});`)
     const gateway = this.client.gateways[table]
     if (!gateway) throw new Error(`There is no gateway defined with the name ${table} nor an array of rows with datatypes have been given. Expected any of either.`)
 
     const schemaValues = [...gateway.schema.values(true)]
     return this.run(`
 			CREATE TABLE ${sanitizeKeyName(table)} (
-				id VARCHAR(${gateway.idLength || 18}) PRIMARY KEY NOT NULL UNIQUE${schemaValues.length ? `, ${schemaValues.map(this.qb.parse.bind(this.qb)).join(", ")}` : ""}
+				id VARCHAR(${gateway.idLength || 18}) PRIMARY KEY NOT NULL UNIQUE${schemaValues.length ? `, ${schemaValues.map(this.qb.parse.bind(this.qb)).join(', ')}` : ''}
 			);`
     )
   }
@@ -82,9 +82,9 @@ module.exports = class extends SQLProvider {
 
   create(table, id, data) {
     const [keys, values] = this.parseUpdateInput(data, false)
-    keys.push("id")
+    keys.push('id')
     values.push(id)
-    return this.run(`INSERT INTO ${sanitizeKeyName(table)} ( ${keys.map(sanitizeKeyName).join(", ")} ) VALUES ( ${valueList(values.length)} );`, values.map(transformValue))
+    return this.run(`INSERT INTO ${sanitizeKeyName(table)} ( ${keys.map(sanitizeKeyName).join(', ')} ) VALUES ( ${valueList(values.length)} );`, values.map(transformValue))
   }
 
   update(table, id, data) {
@@ -123,14 +123,14 @@ module.exports = class extends SQLProvider {
     const filteredPieces = allPieces.slice()
     filteredPieces.splice(index, 1)
 
-    const filteredPiecesNames = filteredPieces.map(piece => sanitizeKeyName(piece.path)).join(", ")
+    const filteredPiecesNames = filteredPieces.map(piece => sanitizeKeyName(piece.path)).join(', ')
 
     await this.createTable(sanitizedCloneTable, filteredPieces.map(this.qb.parse.bind(this.qb)))
     await this.exec([
       `INSERT INTO ${sanitizedCloneTable} (${filteredPiecesNames})`,
       `	SELECT ${filteredPiecesNames}`,
       `	FROM ${sanitizedTable};`
-    ].join("\n"))
+    ].join('\n'))
     await this.exec(`DROP TABLE ${sanitizedTable};`)
     await this.exec(`ALTER TABLE ${sanitizedCloneTable} RENAME TO ${sanitizedTable};`)
     return true
@@ -144,7 +144,7 @@ module.exports = class extends SQLProvider {
     const allPieces = [...gateway.schema.values(true)]
     const index = allPieces.findIndex(piece => schemaPiece.path === piece.path)
     if (index === -1) throw new Error(`There is no key ${schemaPiece.key} defined in the current schema for ${table}.`)
-    const allPiecesNames = allPieces.map(piece => sanitizeKeyName(piece.path)).join(", ")
+    const allPiecesNames = allPieces.map(piece => sanitizeKeyName(piece.path)).join(', ')
     const parsedDatatypes = allPieces.map(this.qb.parse.bind(this.qb))
     parsedDatatypes[index] = `${sanitizeKeyName(schemaPiece.key)} ${schemaPiece.type}`
     await this.createTable(sanitizedCloneTable, parsedDatatypes)
@@ -152,7 +152,7 @@ module.exports = class extends SQLProvider {
       `INSERT INTO ${sanitizedCloneTable} (${allPiecesNames})`,
       `	SELECT ${allPiecesNames}`,
       `	FROM ${sanitizedTable};`
-    ].join("\n"))
+    ].join('\n'))
     await this.exec(`DROP TABLE ${sanitizedTable};`)
     await this.exec(`ALTER TABLE ${sanitizedCloneTable} RENAME TO ${sanitizedTable};`)
     return true
@@ -187,17 +187,17 @@ module.exports = class extends SQLProvider {
  * @private
  */
 function sanitizeKeyName(value) {
-  if (typeof value !== "string") throw new TypeError(`[SANITIZE_NAME] Expected a string, got: ${new Type(value)}`)
+  if (typeof value !== 'string') throw new TypeError(`[SANITIZE_NAME] Expected a string, got: ${new Type(value)}`)
   if (/`|"/.test(value)) throw new TypeError(`Invalid input (${value}).`)
-  if (value.charAt(0) === "\"" && value.charAt(value.length - 1) === "\"") return value
+  if (value.charAt(0) === '"' && value.charAt(value.length - 1) === '"') return value
   return `"${value}"`
 }
 
 function transformValue(value) {
   switch (typeof value) {
-  case "boolean":
-  case "number": return value
-  case "object": return value === null ? value : JSON.stringify(value)
+  case 'boolean':
+  case 'number': return value
+  case 'object': return value === null ? value : JSON.stringify(value)
   default: return String(value)
   }
 }
