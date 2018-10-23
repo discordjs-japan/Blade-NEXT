@@ -12,5 +12,6 @@
     "editor.formatOnSave": false,
     "html.autoClosingTags": false,
     "npm.enableScriptExplorer": true,
-    "scss.validate": false
+    "scss.validate": false,
+    "files.eol": "\n"
 }
