@@ -3,7 +3,7 @@
  * Any option that you wish to use the default value can be removed from this file.
  * This file is init with defaults from both Klasa and Discord.js.
  */
-require("dotenv").config()
+require('dotenv').config()
 
 exports.config = {
   /**
@@ -12,15 +12,15 @@ exports.config = {
   // Disables/Enables a process.on('unhandledRejection'...) handler
   production: false,
   // The default language that comes with klasa. More base languages can be found on Klasa-Pieces
-  language: "en-US",
+  language: 'en-US',
   // The default configurable prefix for each guild
-  prefix: "*/",
+  prefix: '*/',
   // If custom settings should be preserved when a guild removes your bot
   preserveSettings: true,
   // If your bot should be able to mention @everyone
   disableEveryone: false,
   // Whether d.js should queue your rest request in 'sequential' or 'burst' mode
-  apiRequestMethod: "sequential",
+  apiRequestMethod: 'sequential',
   // The time in ms to add to ratelimits, to ensure you wont hit a 429 response
   restTimeOffset: 500,
   // Any Websocket Events you don't want to listen to
@@ -28,7 +28,7 @@ exports.config = {
   // A presence to login with
   presence: {},
   // A once ready message for your console
-  readyMessage: (client) => `Successfully initialized. Ready to serve ${client.guilds.size} guild${client.guilds.size === 1 ? "" : "s"}.`,
+  readyMessage: (client) => `Successfully initialized. Ready to serve ${client.guilds.size} guild${client.guilds.size === 1 ? '' : 's'}.`,
 
   /**
      * Caching Options
@@ -57,7 +57,7 @@ exports.config = {
      * Database Options
      */
   providers: {
-    default: "sqlite"
+    default: 'sqlite'
   },
 
   /**
@@ -78,7 +78,7 @@ exports.config = {
       autoAliases: true,
       bucket: 1,
       cooldown: 5,
-      description: "",
+      description: '',
       enabled: true,
       guarded: false,
       nsfw: false,
@@ -87,9 +87,9 @@ exports.config = {
       promptTime: 30000,
       requiredSettings: [],
       requiredPermissions: 0,
-      runIn: ["text", "dm", "group"],
+      runIn: ['text', 'dm', 'group'],
       subcommands: false,
-      usage: "",
+      usage: '',
       quotedStringSupport: false,
       deletable: false
     },
@@ -148,12 +148,12 @@ exports.config = {
     timestamps: true,
     utc: false,
     colors: {
-      debug: {time: {background: "magenta"}},
-      error: {time: {background: "red"}},
-      log: {time: {background: "blue"}},
-      verbose: {time: {text: "gray"}},
-      warn: {time: {background: "lightyellow", text: "black"}},
-      wtf: {message: {text: "red"}, time: {background: "red"}},
+      debug: {time: {background: 'magenta'}},
+      error: {time: {background: 'red'}},
+      log: {time: {background: 'blue'}},
+      verbose: {time: {text: 'gray'}},
+      warn: {time: {background: 'lightyellow', text: 'black'}},
+      wtf: {message: {text: 'red'}, time: {background: 'red'}},
     },
   },
 
@@ -172,7 +172,7 @@ exports.config = {
   schedule: {interval: 60000},
   aliasFunctions: { 
     returnRun: true, 
-    prefix: "fun", 
+    prefix: 'fun', 
     enabled: true 
   }
 }

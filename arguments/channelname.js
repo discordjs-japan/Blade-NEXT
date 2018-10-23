@@ -3,6 +3,11 @@ const { Channel, Message } = require('discord.js')
 
 const CHANNEL_REGEXP = Argument.regex.channel
 
+/**
+ * resolveChannel
+ * @param {string} query 
+ * @param {Guild} guild 
+ */
 function resolveChannel(query, guild) {
   if (query instanceof Channel) return guild.channels.has(query.id) ? query : null
   if (query instanceof Message) return query.guild.id === guild.id ? query.channel : null

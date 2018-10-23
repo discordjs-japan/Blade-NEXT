@@ -3,6 +3,11 @@ const { GuildMember, User } = require('discord.js')
 
 const USER_REGEXP = Argument.regex.userOrMember
 
+/**
+ * 
+ * @param {string} query 
+ * @param {Guild} guild 
+ */
 function resolveUser(query, guild) {
   if (query instanceof GuildMember) return query.user
   if (query instanceof User) return query

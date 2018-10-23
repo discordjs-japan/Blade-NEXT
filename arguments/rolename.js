@@ -3,6 +3,11 @@ const { Role } = require('discord.js')
 
 const ROLE_REGEXP = Argument.regex.role
 
+/**
+ * resolveRole
+ * @param {string} query 
+ * @param {Guild} guild 
+ */
 function resolveRole(query, guild) {
   if (query instanceof Role) return guild.roles.has(query.id) ? query : null
   if (typeof query === 'string' && ROLE_REGEXP.test(query)) return guild.roles.get(ROLE_REGEXP.exec(query)[1])

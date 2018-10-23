@@ -193,6 +193,11 @@ function sanitizeKeyName(value) {
   return `"${value}"`
 }
 
+/**
+ * @param {string} value
+ * @returns {string}
+ * @private
+ */
 function transformValue(value) {
   switch (typeof value) {
   case 'boolean':
