@@ -28,7 +28,7 @@
   "scripts": {
     "test": "node index.js",
     "start": "node index.js",
-    "lint": "eslint . --fix"
+    "lint": "eslint \"./**/*.js\""
   },
   "repository": "git+https://github.com/DJS-JPN/Blade-NEXT.git",
   "license": "MIT",

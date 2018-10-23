@@ -13,4 +13,4 @@ cache: {
 env:
   - TOKEN=$TOKEN
 install: yarn
-script: "npm run test"
+script: "yarn run lint"
