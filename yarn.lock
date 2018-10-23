@@ -414,8 +414,8 @@ escape-string-regexp@^1.0.5:
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
 eslint-config-djsjpn@DJS-JPN/eslint-config-djsjpn:
-  version "1.0.1"
-  resolved "https://codeload.github.com/DJS-JPN/eslint-config-djsjpn/tar.gz/991630435f1d8266fcd68b6bdb8dc8da4a63bf59"
+  version "1.0.2"
+  resolved "https://codeload.github.com/DJS-JPN/eslint-config-djsjpn/tar.gz/f3c07f79261a87ee96ea2874cadf02e69cebb74f"
 
 eslint-import-resolver-node@^0.3.1:
   version "0.3.2"
