@@ -11,4 +11,4 @@ cache: {
   ]
 }
 install: yarn
-script: "node travis/lint.js"
+script: "yarn run test"
