@@ -27,7 +27,7 @@ if (report.errorCount || report.warningCount) {
     })),
   }
   console.log(embed)
-  hook.send({embeds: [embed]})
+  hook.send({embeds: [embed]}).then(() => {process.exit()})
 }
 
 /**
