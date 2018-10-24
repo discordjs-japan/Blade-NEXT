@@ -26,7 +26,7 @@
     "eslint-plugin-promise": "^4.0.1"
   },
   "scripts": {
-    "test": "node tavis/lint.js",
+    "test": "node travis/lint.js",
     "start": "node index.js",
     "lint": "eslint . --fix"
   },
