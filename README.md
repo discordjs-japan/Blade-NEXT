@@ -2,6 +2,8 @@
 
 [![banner](https://github.com/DJS-JPN/Blade-NEXT/blob/master/assets/icon.png?raw=true)](https://djs-jpn.ga)
 
+
+[![Travis (.com) branch](https://img.shields.io/travis/com/DJS-JPN/Blade-NEXT/master.svg?style=for-the-badge)](https://travis-ci.com/DJS-JPN/Blade-NEXT)
 [![GitHub license](https://img.shields.io/github/license/DJS-JPN/Blade-NEXT.svg?style=for-the-badge)](https://github.com/DJS-JPN/Blade-NEXT/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/DJS-JPN/Blade-NEXT.svg?style=for-the-badge)](https://github.com/DJS-JPN/Blade-NEXT/issues)
 [![GitHub forks](https://img.shields.io/github/forks/DJS-JPN/Blade-NEXT.svg?style=for-the-badge)](https://github.com/DJS-JPN/Blade-NEXT/network)
