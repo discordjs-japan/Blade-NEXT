@@ -7,32 +7,30 @@ const path = require('path')
 
 const report = cli.executeOnFiles(['.'])
 
-if (report.errorCount || report.warningCount) {
-  const files = report.results.filter(e => e.source)
-  const hasError = report.errorCount
-  const all = `${report.errorCount + report.warningCount} problems`
-  const counts = `(${report.errorCount} errors, ${report.warningCount} warnings)`
-  const embed = {
-    description: `:${hasError ? 'x' : 'heavy_multiplication_x'}: ${all} ${counts}`,
-    color: hasError ? 0xFF0000 : 0xFFFF00,
-    author: {
-      name: 'ESLint',
-      icon_url: 'http://eslint.org/img/favicon.512x512.png',
-    },
-    fields: files.map(file => ({
-      name: path.relative(path.join(__dirname, '..'), file.filePath),
-      value: codeblock(file.messages.map(({
-        line: l, column: c, severity, message, ruleId: id,
-      }) => `${l}:${c} ${str(severity)} ${message} ${id}`).join('\n')),
-    })),
-  }
-  console.log(embed)
-  hook.send({embeds: [embed]}).then(() => {process.exit()})
+const files = report.results.filter(e => e.source)
+const hasError = report.errorCount
+const all = `${report.errorCount + report.warningCount} problems`
+const counts = `(${report.errorCount} errors, ${report.warningCount} warnings)`
+const embed = {
+  description: `:${hasError ? 'x' : 'heavy_multiplication_x'}: ${all} ${counts}`,
+  color: hasError ? 0xFF0000 : 0xFFFF00,
+  author: {
+    name: 'ESLint',
+    icon_url: 'http://eslint.org/img/favicon.512x512.png',
+  },
+  fields: files.map(file => ({
+    name: path.relative(path.join(__dirname, '..'), file.filePath),
+    value: codeblock(file.messages.map(({
+      line: l, column: c, severity, message, ruleId: id,
+    }) => `${l}:${c} ${str(severity)} ${message} ${id}`).join('\n')),
+  })),
 }
+hook.send({embeds: [embed]}).then(() => {process.exit()})
 
 /**
- * 
  * @param {string} severity 
+ * @returns {string}
+ * @private
  */
 function str(severity) {
   switch (severity) {
@@ -42,8 +40,9 @@ function str(severity) {
 }
 
 /**
- * 
  * @param {string} code 
+ * @returns {string}
+ * @private
  */
 function codeblock(code) {
   return '```js\n' + code + '```'
