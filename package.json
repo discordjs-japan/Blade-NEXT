@@ -14,6 +14,7 @@
     "klasa-functions": "KlasaCommunityPlugins/functions",
     "klasa-raw-events": "KlasaCommunityPlugins/raw-events",
     "node-fetch": "^2.2.0",
+    "pm2": "^3.2.2",
     "prism-media": "0.0.3",
     "request": "^2.88.0",
     "sqlite": "^3.0.0"
@@ -27,7 +28,8 @@
   },
   "scripts": {
     "test": "node travis/lint.js",
-    "start": "node index.js",
+    "start": "pm2 start index.js --name BladeNEXT",
+    "stop": "pm2 delete BladeNEXT",
     "lint": "eslint . --fix"
   },
   "repository": "git+https://github.com/DJS-JPN/Blade-NEXT.git",
