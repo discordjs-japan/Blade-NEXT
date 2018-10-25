@@ -27,9 +27,9 @@
     "pm2": "^3.2.2"
   },
   "scripts": {
-    "test": "node travis/lint.js",
     "start": "pm2 start index.js --name BladeNEXT",
     "stop": "pm2 delete BladeNEXT",
+    "test": "node travis/lint.js",
     "lint": "eslint . --fix"
   },
   "repository": "git+https://github.com/DJS-JPN/Blade-NEXT.git",
