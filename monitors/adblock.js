@@ -11,7 +11,8 @@ module.exports = class extends Monitor {
       ignoreSelf: true,
       ignoreEdits: false,
       ignoreBlacklistedUsers: false,
-      ignoreBlacklistedGuilds: true
+      ignoreBlacklistedGuilds: true,
+      ignoreOthers: false
     })
   }
 
