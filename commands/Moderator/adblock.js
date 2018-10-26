@@ -21,15 +21,13 @@ module.exports = class extends Command {
   }
 
   async enable(message) {
-    message.guild.settings.update('adblock.enabled', true)
-    message.sendMessage('Done.')
-    this.client.console.debug(message.guild.settings.adblock)
+    await message.guild.settings.update('adblock.enabled', true)
+    return message.sendMessage('Done.')
   }
 
   async disable(message) {
-    message.guild.settings.update('adblock.enabled', false)
-    message.sendMessage('Done.')
-    this.client.console.debug(message.guild.settings.adblock)
+    await message.guild.settings.update('adblock.enabled', false)
+    return message.sendMessage('Done.')
   }
 
   async exclude(message, [mode, channel = message.guild.channel]) {
