@@ -116,7 +116,7 @@ exports.config = {
       enabled: true,
       ignoreBots: true,
       ignoreSelf: true,
-      ignoreOthers: true,
+      ignoreOthers: false,
       ignoreWebhooks: true,
       ignoreEdits: true
     },
