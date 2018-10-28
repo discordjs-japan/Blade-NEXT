@@ -5,14 +5,9 @@ const request = require('request')
 module.exports = class extends Command {
   constructor (...args) {
     super(...args, {
-      enabled: true,
-      runIn: ['text', 'dm', 'group'],
       requiredPermissions: ['EMBED_LINKS'],
-      permissionLevel: 0,
       description: 'Searches MDN for your query.',
-      extendedHelp: 'No extended help available.',
       usage: '<query:str>',
-      usageDelim: ''
     })
   }
 
@@ -35,5 +30,5 @@ module.exports = class extends Command {
         .setDescription(data['excerpt'])
       return message.sendEmbed(embed)
     })
-  } 
+  }
 }

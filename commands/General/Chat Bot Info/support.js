@@ -8,10 +8,7 @@ module.exports = class extends Command {
      * if all options are default, you can omit the constructor completely
      */
     super(...args, {
-      enabled: true,
-      runIn: ['text', 'dm', 'group'],
       description: language => language.get('COMMAND_SUPPORT_DESCRIPTION'),
-      extendedHelp: 'No extended help available.'
     })
   }
 

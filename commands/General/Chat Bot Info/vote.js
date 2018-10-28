@@ -4,8 +4,6 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      enabled: true,
-      runIn: ['text', 'dm', 'group'],
       description: language => language.get('COMMAND_VOTE_DESCRIPTION'),
       requiredPermissions: ['SEND_MESSAGES']
     })
