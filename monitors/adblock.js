@@ -4,14 +4,9 @@ const { Monitor } = require('klasa')
 module.exports = class extends Monitor {
   constructor(...args) {
     super(...args, {
-      enabled: true,
       name: 'AdblockMonitor',
-      ignoreBots: true,
-      ignoreWebhooks: true,
-      ignoreSelf: true,
       ignoreEdits: false,
       ignoreBlacklistedUsers: false,
-      ignoreBlacklistedGuilds: true,
       ignoreOthers: false
     })
   }

@@ -5,7 +5,6 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      runIn: ['text', 'dm', 'group'],
       description: language => language.get('COMMAND_DISCORDSTATS_DESCRIPTION'),
       requiredPermissions: ['EMBED_LINKS', 'SEND_MESSAGES']
     })

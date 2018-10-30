@@ -4,12 +4,10 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      enabled: true,
       runIn: ['text'],
       requiredPermissions: ['MANAGE_CHANNELS'],
       permissionLevel: 6,
-      description: '',
-      extendedHelp: 'No extended help available.',
+      description: '', // TODO
       usage: '<exclude|enable|disable> [add|remove] [channel:channelname]',
       usageDelim: ' ',
       subcommands: true

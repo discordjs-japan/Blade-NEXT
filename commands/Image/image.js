@@ -6,8 +6,6 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      enabled: true,
-      runIn: ['text', 'dm', 'group'],
       description: language => language.get('COMMAND_IMAGE_DESCRIPTION'),
       requiredPermissions: ['EMBED_LINKS', 'SEND_MESSAGES'],
       subcommands: true,
