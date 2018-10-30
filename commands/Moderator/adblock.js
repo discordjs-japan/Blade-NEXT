@@ -8,8 +8,7 @@ module.exports = class extends Command {
       requiredPermissions: ['MANAGE_CHANNELS'],
       permissionLevel: 6,
       description: '', // TODO
-      usage: '<exclude|enable|disable> [add|remove] [channel:channelname]',
-      usageDelim: ' ',
+      usage: '<enable|disable>',
       subcommands: true
     })
   }
@@ -22,9 +21,5 @@ module.exports = class extends Command {
   async disable(message) {
     await message.guild.settings.update('adblock.enabled', false)
     return message.sendMessage('Done.')
-  }
-
-  async exclude(message, [mode, channel = message.guild.channel]) {
-
   }
 }
