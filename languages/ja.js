@@ -259,7 +259,8 @@ module.exports = class extends Language {
       COMMAND_LANGUAGE_SAME: '既にその言語に設定されています。',
       COMMAND_LANGUAGE_UPDATE: '言語設定を変更しました。',
       COMMAND_WIKIPEDIA_DESCRIPTION: 'タイトルからWikipediaの記事を検索して表示します。',
-      COMMAND_SUPPORT_DESCRIPTION: 'サポートサーバーの招待リンクを貼る'
+      COMMAND_SUPPORT_DESCRIPTION: 'サポートサーバーの招待リンクを貼る',
+      COMMAND_ADBLOCK_DESCRIPTION: '宣伝をブロックします。'
     }
   }
 

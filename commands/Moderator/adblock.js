@@ -7,7 +7,7 @@ module.exports = class extends Command {
       runIn: ['text'],
       requiredPermissions: ['MANAGE_CHANNELS'],
       permissionLevel: 6,
-      description: '', // TODO
+      description: language => language.get('COMMAND_ADBLOCK_DESCRIPTION'),
       usage: '<enable|disable>',
       subcommands: true
     })

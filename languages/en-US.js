@@ -92,7 +92,8 @@ module.exports = class extends Language {
       COMMAND_LANGUAGE_SAME: 'It has already been set for that language.',
       COMMAND_LANGUAGE_UPDATE: 'Changed the language setting.',
       COMMAND_WIKIPEDIA_DESCRIPTION: 'Search and display Wikipedia articles from the title.',
-      COMMAND_SUPPORT_DESCRIPTION: 'Put the support server invitation link'
+      COMMAND_SUPPORT_DESCRIPTION: 'Put the support server invitation link',
+      COMMAND_ADBLOCK_DESCRIPTION: 'Block advertisements.'
     }
   }
 
