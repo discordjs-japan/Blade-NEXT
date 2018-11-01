@@ -40,6 +40,6 @@
   "homepage": "https://github.com/DJS-JPN/Blade-NEXT#readme",
   "author": "DJS-JPN",
   "engines": {
-    "node": "10.12.0"
+    "node": ">=10.12.0"
   }
 }
