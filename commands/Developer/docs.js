@@ -5,11 +5,8 @@ module.exports = class extends Command {
 
   constructor(...args) {
     super(...args, {
-      enabled: true,
-      runIn: ['text', 'dm', 'group'],
       requiredPermissions: ['EMBED_LINKS'],
       description: 'Searches the Discord.js docs for your query.',
-      extendedHelp: 'No extended help available.',
       usage: '<master|stable|commando|rpc> <query:str>',
       usageDelim: ' ',
       subcommands: true
