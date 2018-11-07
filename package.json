@@ -9,7 +9,7 @@
     "dotenv": "^6.1.0",
     "erlpack": "github:hammerandchisel/erlpack",
     "fs-nextra": "^0.3.7",
-    "klasa": "github:dirigeants/klasa",
+    "klasa": "dirigeants/klasa",
     "klasa-dashboard-hooks": "github:dirigeants/klasa-dashboard-hooks",
     "klasa-functions": "KlasaCommunityPlugins/functions",
     "klasa-raw-events": "KlasaCommunityPlugins/raw-events",

@@ -1700,9 +1700,9 @@ klasa-raw-events@KlasaCommunityPlugins/raw-events:
   version "0.0.1"
   resolved "https://codeload.github.com/KlasaCommunityPlugins/raw-events/tar.gz/038b82f79dceb95a9f28e96aa4cef1fcfcccc14a"
 
-"klasa@github:dirigeants/klasa":
+klasa@dirigeants/klasa:
   version "0.5.0-dev"
-  resolved "https://codeload.github.com/dirigeants/klasa/tar.gz/de135656fe0bcd5f1dbc99e812717716dd187272"
+  resolved "https://codeload.github.com/dirigeants/klasa/tar.gz/4183b048e6a26629c872dc7f1f3dc94105dd1829"
   dependencies:
     fs-nextra "^0.3.2"
 
