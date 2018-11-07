@@ -22,7 +22,7 @@
     "eslint": "^5.6.1",
     "eslint-config-djsjpn": "DJS-JPN/eslint-config-djsjpn",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "pm2": "^3.2.2"
   },
