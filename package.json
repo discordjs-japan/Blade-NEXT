@@ -13,7 +13,7 @@
     "klasa-dashboard-hooks": "github:dirigeants/klasa-dashboard-hooks",
     "klasa-functions": "KlasaCommunityPlugins/functions",
     "klasa-raw-events": "KlasaCommunityPlugins/raw-events",
-    "node-fetch": "^2.2.0",
+    "node-fetch": "^2.2.1",
     "prism-media": "0.0.3",
     "request": "^2.88.0",
     "sqlite": "^3.0.0"
