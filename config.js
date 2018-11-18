@@ -43,14 +43,14 @@ exports.config = {
   /**
      * Sharding Options
      */
-  shardId: 0,
-  shardCount: 0,
+  shardId: 1,
+  shardCount: 3,
 
   /**
      * Command Handler Options
      */
   commandEditing: true,
-  commandLogging: false,
+  commandLogging: true,
   typing: false,
 
   /**
@@ -135,7 +135,7 @@ exports.config = {
     debug: false,
     error: true,
     log: true,
-    verbose: true,
+    verbose: false,
     warn: true,
     wtf: true
   },
