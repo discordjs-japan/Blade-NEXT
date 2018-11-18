@@ -165,13 +165,10 @@ module.exports = class extends Language {
         `• Klasa      :: v${klasaVersion}`,
         `• Discord.js :: v${discordVersion}`,
         `• Node.js    :: ${processVersion}`,
-        this.client.options.shardCount ?
-          `• Shard      :: ${((message.guild ? message.guild.shardID : message.channel.shardID) || this.client.options.shardId) + 1} / ${this.client.options.shardCount}` :
-          ''
+        `• Shard      :: ${(message.guild ? message.guild.shardID : 0) + 1} / ${this.client.options.totalShardCount}`
       ],
       COMMAND_STATS_DESCRIPTION: 'ボットの統計情報を表示します。',
       MESSAGE_PROMPT_TIMEOUT: 'プロンプトがタイムアウトしました。',
-
       COMMAND_AVATAR_DESCRIPTION: 'あなたのアバターURLを取得します。',
       COMMAND_DISCORDSTATS_DESCRIPTION: 'Discordのサーバー状態を表示します。',
       COMMAND_DISCORDSTATS_NORMAL: '正常',
