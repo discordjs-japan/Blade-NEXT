@@ -43,8 +43,8 @@ exports.config = {
   /**
      * Sharding Options
      */
-  shardId: 0,
-  shardCount: 0,
+  shardId: 1,
+  shardCount: 3,
 
   /**
      * Command Handler Options
