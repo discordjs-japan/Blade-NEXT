@@ -132,10 +132,10 @@ exports.config = {
      * Console Event Handlers (enabled/disabled)
      */
   consoleEvents: {
-    debug: true,
+    debug: false,
     error: true,
     log: true,
-    verbose: true,
+    verbose: false,
     warn: true,
     wtf: true
   },
