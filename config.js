@@ -50,7 +50,7 @@ exports.config = {
      * Command Handler Options
      */
   commandEditing: true,
-  commandLogging: false,
+  commandLogging: true,
   typing: false,
 
   /**
