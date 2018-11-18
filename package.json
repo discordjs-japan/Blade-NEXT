@@ -1,6 +1,6 @@
 {
   "name": "blade-next",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Blade新しく作ります。",
   "main": "index.js",
   "dependencies": {

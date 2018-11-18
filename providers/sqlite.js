@@ -83,8 +83,10 @@ module.exports = class extends SQLProvider {
 
   create(table, id, data) {
     const [keys, values] = this.parseUpdateInput(data, false)
-    keys.push('id')
-    values.push(id)
+    if (!keys.includes('id')) {
+      keys.push('id')
+      values.push(id)
+    }
     return this.run(`INSERT INTO ${sanitizeKeyName(table)} ( ${keys.map(sanitizeKeyName).join(', ')} ) VALUES ( ${valueList(values.length)} );`, values.map(transformValue))
   }
 
