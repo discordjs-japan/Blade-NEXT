@@ -4,17 +4,14 @@
   "description": "Blade新しく作ります。",
   "main": "index.js",
   "dependencies": {
-    "bufferutil": "^4.0.0",
-    "discord.js": "github:discordjs/discord.js",
+    "discord.js": "discordjs/discord.js",
     "dotenv": "^6.1.0",
-    "erlpack": "github:hammerandchisel/erlpack",
     "fs-nextra": "^0.3.7",
     "klasa": "dirigeants/klasa",
     "klasa-dashboard-hooks": "dirigeants/klasa-dashboard-hooks",
     "klasa-functions": "KlasaCommunityPlugins/functions",
     "klasa-raw-events": "KlasaCommunityPlugins/raw-events",
     "node-fetch": "^2.2.1",
-    "prism-media": "0.0.3",
     "request": "^2.88.0",
     "sqlite": "^3.0.0"
   },
