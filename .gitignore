@@ -62,6 +62,3 @@ typings/
 
 # Database
 bwd/*
-
-# now config
-now.json
