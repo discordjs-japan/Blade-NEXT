@@ -1,7 +1,6 @@
 {
   "name": "blade-next",
   "alias": "blade-next",
-  "public": true,
   "scale": {
     "sfo1": {
       "min": 1,
@@ -9,6 +8,6 @@
     }
   },
   "env": {
-    "TOKEN": "@bladenext-token"
+    "TOKEN": "@discordbot-token"
   }
 }
