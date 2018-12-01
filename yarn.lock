@@ -1737,7 +1737,8 @@ klasa-raw-events@KlasaCommunityPlugins/raw-events:
 
 klasa@dirigeants/klasa:
   version "0.5.0-dev"
-  resolved "https://codeload.github.com/dirigeants/klasa/tar.gz/8496d45db52a01727e5d3fd8b0b81450df77efbf"
+  uid dfba17e75c1203906de9be59f30f69d6389123a3
+  resolved "https://codeload.github.com/dirigeants/klasa/tar.gz/dfba17e75c1203906de9be59f30f69d6389123a3"
   dependencies:
     fs-nextra "^0.3.2"
 
