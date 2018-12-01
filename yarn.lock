@@ -1723,7 +1723,8 @@ kind-of@^6.0.0, kind-of@^6.0.2:
 
 klasa-dashboard-hooks@dirigeants/klasa-dashboard-hooks:
   version "0.0.1-dev"
-  resolved "https://codeload.github.com/dirigeants/klasa-dashboard-hooks/tar.gz/d859f61652af544630d4faac95fb38e30f041477"
+  uid "351dd9cbe09eb2a3c57bcf64cf71e07607313890"
+  resolved "https://codeload.github.com/dirigeants/klasa-dashboard-hooks/tar.gz/351dd9cbe09eb2a3c57bcf64cf71e07607313890"
   dependencies:
     node-fetch "^2.1.2"
 
